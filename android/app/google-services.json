@@ -1,0 +1,85 @@
+{
+  "project_info": {
+    "project_number": "194064177069",
+    "firebase_url": "https://app-chef-connect-india-default-rtdb.firebaseio.com",
+    "project_id": "app-chef-connect-india",
+    "storage_bucket": "app-chef-connect-india.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:194064177069:android:f38aa2ca8affc4d66a7324",
+        "android_client_info": {
+          "package_name": "com.chefconnect.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "194064177069-468v96pj880e528dulfd2t2b470jaj2o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.chefconnect.app",
+            "certificate_hash": "5bc56af5fcf08f96f78a3b720af7db8a79f6f903"
+          }
+        },
+        {
+          "client_id": "194064177069-g6n7e1vbocgnatqejl48lb4i403isfbo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.chefconnect.app",
+            "certificate_hash": "003bf0b6c06ac744c7ee0b27f5c225f82f7be1e2"
+          }
+        },
+        {
+          "client_id": "194064177069-7otkcehjp4aqt4k8698f4upclq05ag9l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAI52QUSGMlJoUkZYue8jl93T-wVzGUA1s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "194064177069-7otkcehjp4aqt4k8698f4upclq05ag9l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:194064177069:android:856d80568879a7076a7324",
+        "android_client_info": {
+          "package_name": "com.admin.chef_connect_india_admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "194064177069-7otkcehjp4aqt4k8698f4upclq05ag9l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAI52QUSGMlJoUkZYue8jl93T-wVzGUA1s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "194064177069-7otkcehjp4aqt4k8698f4upclq05ag9l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
