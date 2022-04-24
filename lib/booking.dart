@@ -117,7 +117,7 @@ class _listpredefinedState extends State<listpredefined> {
                   elevation: 5,
                   child: Container(
                     padding: const EdgeInsets.only(left: 10.0),
-                    width: scwidth - 90,
+                    width: scwidth - 30,
                     height: 100.0,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.horizontal(
@@ -159,7 +159,7 @@ class _listpredefinedState extends State<listpredefined> {
                 elevation: 5,
                 child: Container(
                   padding: const EdgeInsets.only(left: 10.0),
-                  width: scwidth - 90,
+                  width: scwidth - 50,
                   // height: 100.0,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.horizontal(
@@ -187,15 +187,21 @@ class _listpredefinedState extends State<listpredefined> {
                             Padding(
                               padding: const EdgeInsets.all(15.0),
                               child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
                                 children: [
                                   Text(
                                     "${widget.bookingId}'s menu",
                                     style: GoogleFonts.roboto(
-                                      fontSize: 20.0,
+                                      fontSize: 18.0,
                                       color: const Color(0xFF4A4B4D),
                                       fontWeight: FontWeight.w700,
+                                    ),
+                                  ),
+                                  ExpandableButton(
+                                    theme: ExpandableThemeData(
+                                        iconColor: Colors.blue),
+                                    child: Icon(
+                                      Icons.cancel_outlined,
+                                      color: Colors.red,
                                     ),
                                   ),
                                 ],
@@ -237,11 +243,9 @@ class _listpredefinedState extends State<listpredefined> {
                           ],
                         ),
                         Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 ElevatedButton(
                                     onPressed: () {
@@ -256,7 +260,7 @@ class _listpredefinedState extends State<listpredefined> {
                                       // //_launchURL(widget.customerPhone);
                                     },
                                     child: Text("call customer")),
-                                Spacer(),
+                                // Spacer(),
                                 ElevatedButton(
                                     onPressed: () {
                                       launch("tel: ${widget.chefContact}");
@@ -266,62 +270,36 @@ class _listpredefinedState extends State<listpredefined> {
                             ),
                           ],
                         ),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        Column(
+                        Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                ElevatedButton(
-                                    onPressed: () {
-                                      showAlertDialog(widget.bookingId,
-                                          "Are you sure to reject", "Cancel");
-                                    },
-                                    child: Text("REJECT")),
-                                ElevatedButton(
-                                    onPressed: () {
-                                      showAlertDialog(
-                                          widget.bookingId,
-                                          "Are you sure to accept",
-                                          "Inprogress");
-                                    },
-                                    child: Text("ACCEPT")),
-                                Spacer(),
-                                ElevatedButton(
-                                    onPressed: () {
-                                      showAlertDialog(widget.bookingId,
-                                          "Are you sure to reject", "Cancel");
-                                    },
-                                    child: Text("REJECT")),
-                                Spacer(),
-                                ElevatedButton(
-                                    onPressed: () {
-                                      showAlertDialog(
-                                          widget.bookingId,
-                                          "Are you sure to accept",
-                                          "Inprogress");
-                                    },
-                                    child: Text("ACCEPT")),
-                              ],
-                            ),
+                          children: [
+                            ElevatedButton(
+                                onPressed: () {
+                                  showAlertDialog(widget.bookingId,
+                                      "Are you sure to reject", "Pending");
+                                },
+                                child: Text("Reject")),
+                            ElevatedButton(
+                                onPressed: () {
+                                  showAlertDialog(widget.bookingId,
+                                      "Are you sure to accept", "Inprogress");
+                                },
+                                child: Text("In-Progress")),
+                            // Spacer(),
+                            // ElevatedButton(
+                            //     onPressed: () {
+                            //       showAlertDialog(widget.bookingId,
+                            //           "Are you sure to reject", "Cancel");
+                            //     },
+                            //     child: Text("REJECT")),
+                            // Spacer(),
+                            ElevatedButton(
+                                onPressed: () {
+                                  showAlertDialog(widget.bookingId,
+                                      "Are you sure to accept", "Success");
+                                },
+                                child: Text("Completed")),
                           ],
-                        ),
-                        ExpandableButton(
-                          theme: ExpandableThemeData(iconColor: Colors.blue),
-                          child: Padding(
-                            padding: const EdgeInsets.fromLTRB(0, 10, 0, 20),
-                            child: Text(
-                              'Close',
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
                         ),
                       ],
                     ),
@@ -345,13 +323,16 @@ class _listpredefinedState extends State<listpredefined> {
     // set up the buttons
     Widget cancelButton = TextButton(
       child: Text("Cancel"),
-      onPressed: () {},
+      onPressed: () {
+        Navigator.pop(context);
+      },
     );
     Widget continueButton = TextButton(
       child: Text("Continue"),
       onPressed: () {
         bookingupdate(widget.bookingId, message2);
         Fluttertoast.showToast(msg: message2);
+        Navigator.pop(context);
       },
     );
 
