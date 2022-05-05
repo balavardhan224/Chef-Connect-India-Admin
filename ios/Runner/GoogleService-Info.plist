@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>194064177069-qh413r6lim71sl61030mred6iutk5o2u.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.194064177069-qh413r6lim71sl61030mred6iutk5o2u</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>194064177069-232f2k4dliacsurpo96jjbason9ma0jh.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDB6S_EMBUvn4AegfldVt3WzfU-rmlTmt4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>194064177069</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.admin.chefConnectIndiaAdmin</string>
+	<key>PROJECT_ID</key>
+	<string>app-chef-connect-india</string>
+	<key>STORAGE_BUCKET</key>
+	<string>app-chef-connect-india.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:194064177069:ios:1a3809a4996e69a56a7324</string>
+	<key>DATABASE_URL</key>
+	<string>https://app-chef-connect-india-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>
