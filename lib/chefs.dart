@@ -10,7 +10,7 @@ class chefs extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Firestore pagination example'),
+        title: const Text('Chefs'),
         centerTitle: true,
       ),
       body: PaginateFirestore(

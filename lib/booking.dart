@@ -14,7 +14,7 @@ class booking extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Firestore pagination example'),
+        title: const Text("Booking's"),
         centerTitle: true,
       ),
       body: PaginateFirestore(

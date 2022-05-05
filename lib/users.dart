@@ -9,7 +9,7 @@ class users extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('USERS'),
+        title: const Text('Customers'),
         centerTitle: true,
       ),
       body: PaginateFirestore(
