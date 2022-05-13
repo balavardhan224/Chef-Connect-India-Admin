@@ -68,7 +68,7 @@ class listpredefined extends StatefulWidget {
   late bool withMaterial;
   late String address;
   late String bookingStatus;
-  late bool chefId;
+  late String chefId;
   late String customerId;
   late String cid;
   listpredefined({
