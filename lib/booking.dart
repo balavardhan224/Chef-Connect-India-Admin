@@ -38,6 +38,9 @@ class booking extends StatelessWidget {
                 withMaterial: dataa['withMaterial'],
                 address: dataa['address'],
                 bookingStatus: dataa['bookingStatus'],
+                chefId: dataa['chefId'],
+                customerId: dataa['customerId'],
+                cid: dataa['cid'],
               ),
             ),
           );
@@ -65,6 +68,9 @@ class listpredefined extends StatefulWidget {
   late bool withMaterial;
   late String address;
   late String bookingStatus;
+  late bool chefId;
+  late String customerId;
+  late String cid;
   listpredefined({
     required this.bookingId,
     required this.bookingTime,
@@ -78,6 +84,9 @@ class listpredefined extends StatefulWidget {
     required this.withMaterial,
     required this.address,
     required this.bookingStatus,
+    required this.chefId,
+    required this.customerId,
+    required this.cid,
   });
 
   @override
