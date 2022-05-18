@@ -389,13 +389,13 @@ class _cheflistState extends State<cheflist> {
                               ),
                             ),
                             Text(
-                              '${widget.cheffees}',
+                              '\u{20B9}${widget.cheffees}',
                               style: TextStyle(
                                 fontFamily: 'Montserrat',
                                 color: Colors.black,
                                 fontSize: 16,
                               ),
-                            )
+                            ),
                           ],
                         ),
                       ),

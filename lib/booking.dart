@@ -433,25 +433,45 @@ class _listpredefinedState extends State<listpredefined> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                ElevatedButton(
-                                    onPressed: () {
-                                      // var url = widget.chefContact;
-                                      // var p = '+919876543210';
-                                      launch("tel: ${widget.customerPhone}");
-                                      // const phonenumber = '9876543210';
-                                      // const url = 'tel:$phonenumber';
-                                      // if (await canLaunch(url)) {
-                                      //   await launch('9876543210');
-                                      // }
-                                      // //_launchURL(widget.customerPhone);
-                                    },
-                                    child: Text("call customer")),
+                                SizedBox(
+                                  width: 125,
+                                  child: ElevatedButton(
+                                      style: ElevatedButton.styleFrom(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(
+                                            10,
+                                          ),
+                                        ),
+                                      ),
+                                      onPressed: () {
+                                        // var url = widget.chefContact;
+                                        // var p = '+919876543210';
+                                        launch("tel: ${widget.customerPhone}");
+                                        // const phonenumber = '9876543210';
+                                        // const url = 'tel:$phonenumber';
+                                        // if (await canLaunch(url)) {
+                                        //   await launch('9876543210');
+                                        // }
+                                        // //_launchURL(widget.customerPhone);
+                                      },
+                                      child: Text("call customer")),
+                                ),
                                 // Spacer(),
-                                ElevatedButton(
-                                    onPressed: () {
-                                      launch("tel: ${widget.chefContact}");
-                                    },
-                                    child: Text("call chef")),
+                                SizedBox(
+                                  width: 130,
+                                  child: ElevatedButton(
+                                      style: ElevatedButton.styleFrom(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(
+                                            10,
+                                          ),
+                                        ),
+                                      ),
+                                      onPressed: () {
+                                        launch("tel: ${widget.chefContact}");
+                                      },
+                                      child: Text("call chef")),
+                                ),
                               ],
                             ),
                           ],
@@ -460,6 +480,13 @@ class _listpredefinedState extends State<listpredefined> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(
+                                      10,
+                                    ),
+                                  ),
+                                ),
                                 onPressed: () {
                                   showAlertDialog(widget.bookingId,
                                       "Are you sure to reject", "Pending");
