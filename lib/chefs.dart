@@ -12,7 +12,7 @@ class chefs extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Chefs'),
+        title: const Text('Chef Details'),
         centerTitle: true,
       ),
       body: PaginateFirestore(
@@ -141,7 +141,7 @@ class _cheflistState extends State<cheflist> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              "${widget.chefid}'s details",
+                              "${widget.firstname + widget.lastname}'s details",
                               style: GoogleFonts.roboto(
                                 fontSize: 20.0,
                                 color: const Color(0xFF4A4B4D),
@@ -159,7 +159,7 @@ class _cheflistState extends State<cheflist> {
                 elevation: 5,
                 child: Container(
                   padding: const EdgeInsets.only(left: 10.0),
-                  width: scwidth - 50,
+                  width: scwidth - 20,
                   // height: 100.0,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.horizontal(
@@ -175,56 +175,288 @@ class _cheflistState extends State<cheflist> {
                       ),
                     ],
                   ),
-                  child: Column(children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Padding(
-                              padding: const EdgeInsets.all(15.0),
-                              child: Row(
-                                children: [
-                                  Text(
-                                    "${widget.chefid}'s details are: ",
-                                    style: GoogleFonts.roboto(
-                                      fontSize: 18.0,
-                                      color: const Color(0xFF4A4B4D),
-                                      fontWeight: FontWeight.w700,
-                                    ),
-                                  ),
-                                  ExpandableButton(
-                                    theme: ExpandableThemeData(
-                                        iconColor: Colors.blue),
-                                    child: Icon(
-                                      Icons.cancel_outlined,
-                                      color: Colors.red,
-                                    ),
-                                  ),
-                                ],
+                  child: Column(
+                    // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    // crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "${widget.firstname + widget.lastname}'s details ",
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                color: Colors.grey,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18,
                               ),
                             ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'dishes:',
-                                  style: GoogleFonts.roboto(
-                                      fontSize: 18.0,
-                                      color: const Color(0xFF4A4B4D),
-                                      height: 1.11,
-                                      fontWeight: FontWeight.w500),
-                                ),
-                              ],
+                            ExpandableButton(
+                              theme:
+                                  ExpandableThemeData(iconColor: Colors.blue),
+                              child: Icon(
+                                Icons.cancel_outlined,
+                                color: Colors.red,
+                              ),
                             ),
                           ],
                         ),
-                      ],
-                    ),
-                  ]),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          top: 4,
+                          left: 20,
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              'First Name: ',
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                color: Colors.black,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18,
+                              ),
+                            ),
+                            Text(
+                              '${widget.firstname}',
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                color: Colors.black,
+                                fontSize: 16,
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          left: 20,
+                          top: 5,
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Last Name: ',
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                color: Colors.black,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18,
+                              ),
+                            ),
+                            Text(
+                              '${widget.lastname}',
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                color: Colors.black,
+                                fontSize: 16,
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          top: 5,
+                          left: 20,
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Mobile Number: ',
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                color: Colors.black,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18,
+                              ),
+                            ),
+                            Text(
+                              '${widget.mobile1}',
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                color: Colors.black,
+                                fontSize: 16,
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20, top: 5),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              'City: ',
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                color: Colors.black,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18,
+                              ),
+                            ),
+                            Text(
+                              '${widget.city}',
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                color: Colors.black,
+                                fontSize: 16,
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          left: 20,
+                          top: 5,
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Address: ',
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                color: Colors.black,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18,
+                              ),
+                            ),
+                            Text(
+                              '${widget.address}',
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                color: Colors.black,
+                                fontSize: 16,
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          left: 20,
+                          top: 5,
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Chef Level: ',
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                color: Colors.black,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18,
+                              ),
+                            ),
+                            Text(
+                              '${widget.level}',
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                color: Colors.black,
+                                fontSize: 16,
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          left: 20,
+                          top: 5,
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Chef Fees: ',
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                color: Colors.black,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18,
+                              ),
+                            ),
+                            Text(
+                              '${widget.cheffees} thousand',
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                color: Colors.black,
+                                fontSize: 16,
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          left: 20,
+                          top: 5,
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Chef Rating: ',
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                color: Colors.black,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18,
+                              ),
+                            ),
+                            Text(
+                              '${widget.rating}',
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                color: Colors.black,
+                                fontSize: 16,
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          left: 20,
+                          top: 5,
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Work Preference: ',
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                color: Colors.black,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18,
+                              ),
+                            ),
+                            Text(
+                              '${widget.workpreference}',
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                color: Colors.black,
+                                fontSize: 16,
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             )

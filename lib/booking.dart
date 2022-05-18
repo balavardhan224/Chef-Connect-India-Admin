@@ -14,7 +14,7 @@ class booking extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Booking's"),
+        title: const Text('Booking Details'),
         centerTitle: true,
       ),
       body: PaginateFirestore(
@@ -38,9 +38,6 @@ class booking extends StatelessWidget {
                 withMaterial: dataa['withMaterial'],
                 address: dataa['address'],
                 bookingStatus: dataa['bookingStatus'],
-                chefId: dataa['chefId'],
-                customerId: dataa['customerId'],
-                cid: dataa['cid'],
               ),
             ),
           );
@@ -68,9 +65,6 @@ class listpredefined extends StatefulWidget {
   late bool withMaterial;
   late String address;
   late String bookingStatus;
-  late String chefId;
-  late String customerId;
-  late String cid;
   listpredefined({
     required this.bookingId,
     required this.bookingTime,
@@ -84,9 +78,6 @@ class listpredefined extends StatefulWidget {
     required this.withMaterial,
     required this.address,
     required this.bookingStatus,
-    required this.chefId,
-    required this.customerId,
-    required this.cid,
   });
 
   @override
@@ -110,6 +101,8 @@ class _listpredefinedState extends State<listpredefined> {
 
   @override
   Widget build(BuildContext context) {
+    var dishes =
+        widget.selectedMenu.toString().replaceAll('[', '').replaceAll(']', '');
     var scwidth = MediaQuery.of(context).size.width;
     bool selected = false;
     return Padding(
@@ -216,41 +209,225 @@ class _listpredefinedState extends State<listpredefined> {
                                 ],
                               ),
                             ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                            Row(
+                              // crossAxisAlignment: CrossAxisAlignment.start
                               children: [
                                 Text(
-                                  'dishes:',
-                                  style: GoogleFonts.roboto(
-                                      fontSize: 18.0,
-                                      color: const Color(0xFF4A4B4D),
-                                      height: 1.11,
-                                      fontWeight: FontWeight.w500),
+                                  'Dishes:',
+                                  style: TextStyle(
+                                    fontFamily: 'Montserrat',
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 18.0,
+                                  ),
                                 ),
-                                Wrap(
-                                  spacing: 5.0,
-                                  children: widget.selectedMenu
-                                      .map(
-                                        (e) => Chip(
-                                          backgroundColor:
-                                              Colors.orange.shade100,
-                                          label: Text(
-                                            e.toString().toLowerCase(),
-                                            style: TextStyle(
-                                                color: Colors.orange.shade900,
-                                                fontWeight: FontWeight.bold),
-                                          ),
-                                          shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(10)),
-                                        ),
-                                      )
-                                      .toList(),
-                                ),
+
+                                // Wrap(
+                                //   spacing: 5.0,
+                                //   children: widget.selectedMenu
+                                //       .map(
+                                //         (e) => Chip(
+                                //           backgroundColor:
+                                //               Colors.orange.shade100,
+                                //           label: Text(
+                                //             e.toString().toLowerCase(),
+                                //             style: TextStyle(
+                                //                 color: Colors.orange.shade900,
+                                //                 fontWeight: FontWeight.bold),
+                                //           ),
+                                //           shape: RoundedRectangleBorder(
+                                //               borderRadius:
+                                //                   BorderRadius.circular(10)),
+                                //         ),
+                                //       )
+                                //       .toList(),
+                                // ),
                               ],
                             ),
+                            Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    '${dishes}',
+                                    style: TextStyle(
+                                      fontFamily: 'Montserrat',
+                                      // fontWeight: FontWeight.w500,
+                                      fontSize: 16.0,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            )
                           ],
                         ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Address:',
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18.0,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                '${widget.address}',
+                                style: TextStyle(
+                                  fontFamily: 'Montserrat',
+                                  // fontWeight: FontWeight.w600,
+                                  fontSize: 16.0,
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Booking Slot:',
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18.0,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                '${widget.bookingSlot}',
+                                style: TextStyle(
+                                  fontFamily: 'Montserrat',
+                                  // fontWeight: FontWeight.w600,
+                                  fontSize: 16.0,
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Booking Status:',
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18.0,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                '${widget.bookingStatus}',
+                                style: TextStyle(
+                                  fontFamily: 'Montserrat',
+                                  // fontWeight: FontWeight.w600,
+                                  fontSize: 16.0,
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Booking Time:',
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18.0,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                '${widget.bookingTime}',
+                                style: TextStyle(
+                                  fontFamily: 'Montserrat',
+                                  // fontWeight: FontWeight.w600,
+                                  fontSize: 16.0,
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Booking Type:',
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18.0,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                '${widget.bookingType} Chef',
+                                style: TextStyle(
+                                  fontFamily: 'Montserrat',
+                                  // fontWeight: FontWeight.w600,
+                                  fontSize: 16.0,
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Number of Plates:',
+                              style: TextStyle(
+                                fontFamily: 'Montserrat',
+                                fontWeight: FontWeight.w600,
+                                fontSize: 18.0,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                '${widget.numberOfPlates}',
+                                style: TextStyle(
+                                  fontFamily: 'Montserrat',
+                                  // fontWeight: FontWeight.w600,
+                                  fontSize: 16.0,
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                        // Row(
+                        //   mainAxisAlignment: MainAxisAlignment.start,
+                        //   children: [
+                        //     Text(
+                        //       'Address:',
+                        //       style: TextStyle(
+                        //         fontFamily: 'Montserrat',
+                        //         fontWeight: FontWeight.w600,
+                        //         fontSize: 16.0,
+                        //       ),
+                        //     ),
+                        //     Padding(
+                        //       padding: const EdgeInsets.all(8.0),
+                        //       child: Text(
+                        //         '${widget.address}',
+                        //         style: TextStyle(
+                        //           fontFamily: 'Montserrat',
+                        //           fontWeight: FontWeight.w600,
+                        //           fontSize: 14.0,
+                        //         ),
+                        //       ),
+                        //     )
+                        //   ],
+                        // ),
                         Column(
                           children: <Widget>[
                             Row(
