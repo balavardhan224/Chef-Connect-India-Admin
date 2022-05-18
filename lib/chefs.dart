@@ -389,7 +389,7 @@ class _cheflistState extends State<cheflist> {
                               ),
                             ),
                             Text(
-                              '${widget.cheffees} thousand',
+                              '${widget.cheffees}',
                               style: TextStyle(
                                 fontFamily: 'Montserrat',
                                 color: Colors.black,
